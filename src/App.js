@@ -5,21 +5,21 @@ import Todos from './components/Todos'
 class App extends React.Component {
 
   state = {
-    todos : [
+    todos: [
       {
         id: 1,
-        title : "Dinner with wife",
-        completed : false
+        title: "Dinner with wife",
+        completed: false
       },
       {
         id: 2,
-        title : "To study ReactJS",
-        completed : false
+        title: "To study ReactJS",
+        completed: false
       },
       {
         id: 3,
-        title : "Read some book",
-        completed : false
+        title: "Read some book",
+        completed: true
       }
     ]
   }
@@ -28,7 +28,7 @@ class App extends React.Component {
     console.log(this.state.todos)
     return (
       <div className="App">
-        <Todos />
+        <Todos todos={this.state.todos}/>
       </div>
     );
   }
