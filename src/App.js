@@ -24,11 +24,15 @@ class App extends React.Component {
     ]
   }
 
+  markCompleted = (id) => {
+    console.log("from App.js" + id)
+  }
+
   render() {
     console.log(this.state.todos)
     return (
       <div className="App">
-        <Todos todos={this.state.todos}/>
+        <Todos todos={this.state.todos} markComplete={this.markCompleted}/>
       </div>
     );
   }
