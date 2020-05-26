@@ -1,26 +1,26 @@
 import axios from 'axios';
 
-const TODO_API_BASE_URL = 'http://localhost:9000/todos';
+const TODO_API_BASE_URL = 'http://localhost:8080/todo/';
 
 class TodoService {
 
-    fetchUsers() {
+    fetchTodos() {
         return axios.get(TODO_API_BASE_URL);
     }
 
-    fetchUserById(todoId) {
+    fetchTodoById(todoId) {
         return axios.get(TODO_API_BASE_URL + '/' + todoId);
     }
 
-    deleteUser(todoId) {
+    deleteTodo(todoId) {
         return axios.delete(TODO_API_BASE_URL + '/' + todoId);
     }
 
-    addUser(todo) {
+    addTodo(todo) {
         return axios.post(TODO_API_BASE_URL, todo);
     }
 
-    editUser(todo) {
+    editTodo(todo) {
         return axios.put(TODO_API_BASE_URL + '/' + todo.id, todo);
     }
 
