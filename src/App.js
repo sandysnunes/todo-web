@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Todos from './components/Todos'
+import TodoService from './services/TodoService';
 
 class App extends React.Component {
 
@@ -19,9 +20,18 @@ class App extends React.Component {
       {
         id: 3,
         title: "Read some book",
-        completed: true
+        completed: false
       }
     ]
+  }
+
+  componentDidMount() {
+    //TODO sandys - to implement. See cors
+    TodoService.fetchTodos().then((result) => {
+      console.log(result)
+    }).catch((err) => {
+      console.error(err)
+    });
   }
 
   markCompleted = (id) => {
