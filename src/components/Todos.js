@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 class Todos extends Component {
 
   render() {
-
     const todos = this.props.todos;
 
     return todos.map( (todo) => (

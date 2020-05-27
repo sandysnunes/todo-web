@@ -5,30 +5,14 @@ import TodoService from './services/TodoService';
 
 class App extends React.Component {
 
-  state = {
-    todos: [
-      {
-        id: 1,
-        title: "Dinner with wife",
-        completed: false
-      },
-      {
-        id: 2,
-        title: "To study ReactJS",
-        completed: false
-      },
-      {
-        id: 3,
-        title: "Read some book",
-        completed: false
-      }
-    ]
+  constructor(props) {
+    super(props)
+    this.state = {todos : []}
   }
 
   componentDidMount() {
-    //TODO sandys - to implement. See cors
     TodoService.fetchTodos().then((result) => {
-      console.log(result)
+      this.setState({todos: result.data.data})
     }).catch((err) => {
       console.error(err)
     });
